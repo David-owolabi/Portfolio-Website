@@ -83,6 +83,13 @@ header.shadow{
   color: var(--text-color)
 }
 
+.nav-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* small space between nav and moon */
+}
+
+
 .navbar{
   display: flex;
   align-items: center;
@@ -101,12 +108,6 @@ header.shadow{
   color: #fff;
 }
 
-header .navbar {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  text-align: left;
-}
 
 
 #menu-icon{
@@ -396,23 +397,27 @@ form .send-btn:hover{
     padding: 11px 4%;
   }
   #menu-icon{
-    display: initial;
+    display: block;
   }
   header
   .navbar{
     position: absolute;
-    top: -500px;
+    top: 100%;
     left: 0;
     right: 0;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     background:var(--bg-color);
     box-shadow: 0 4px  4px rgba(0, 0, 0, 0.1);
     transition: 0.2s ease;
     text-align: left;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
   }
   .navbar.active{
-    top: 100%;
+   max-height: 500px;
   }
   .navbar a{
     padding: 1rem;
@@ -420,6 +425,10 @@ form .send-btn:hover{
     margin: 1rem;
     display: block;
   }
+    .navbar a:last-child {
+    border-bottom: none; /* remove line on last item */
+  }
+
   .navbar a:hover{
     color: #fff;
     background: var(--text-color);
@@ -466,3 +475,4 @@ form .send-btn:hover{
     font-size: 0.938rem;
   }
 }
+
