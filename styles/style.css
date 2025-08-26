@@ -16,6 +16,15 @@
 :root{
   --main-color: #0b178f;
   --text-color: #1c2844;
+  --bg-color: #fff;
+  --scroll-thumb-color: var(--main-color);
+}
+
+.dark-theme{
+  --main-color: #fefefe;
+  --text-color: #72d3dc;
+  --bg-color: #000;
+  --scroll-thumb-color: var(--text-color);
 }
 
 section{
@@ -28,13 +37,14 @@ img{
 
 body{
   color: var(--text-color);
+  background-color: var(--bg-color);
 }
 
 
 /* remember to check what this is and what it does */
 *::selection{
-  color: #fff;
-  background-color: var(--main-color);
+  color: var(--bg-color);
+  background: var(--main-color);
 }
 
 /* Custom Scroll Bar */
@@ -45,9 +55,10 @@ html::-webkit-scrollbar-track{
   background: transparent;
 }
 html::-webkit-scrollbar-thumb{
-  background: var(--main-color);
+  background: var(--scroll-thumb-color);
   border-radius: 5rem;
 }
+
 
 header{
   position: fixed;
@@ -59,7 +70,7 @@ header{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #fff;
+  background: var(--bg-color);
   padding: 18px 10%;
   transition: 0.2s;
 }
@@ -74,6 +85,8 @@ header.shadow{
 
 .navbar{
   display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .navbar a{
@@ -87,6 +100,14 @@ header.shadow{
   background: var(--text-color);
   color: #fff;
 }
+
+header .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: left;
+}
+
 
 #menu-icon{
   font-size: 24px;
@@ -128,7 +149,7 @@ header.shadow{
   display: inline-block;
   background: var(--text-color);
   padding: 0.8rem 2rem;
-  color: #fff;
+  color: var(--bg-color);
   font-weight: 500;
 }
 .btn:hover{
@@ -183,7 +204,7 @@ header.shadow{
 .bx{
   margin: 1rem;
   font-size: 24px;
-  color: #fff;
+  color: var(--bg-color);
   padding: 10px;
   border-radius: 4px;
   background: var(--text-color);
@@ -231,7 +252,7 @@ header.shadow{
 }
 .services-container .box:hover{
   background: var(--text-color);
-  color: #fff;
+  color: var(--bg-color);
   transition: 0.2s;
 }
 .services-container .box:hover .bx{
@@ -330,18 +351,20 @@ textarea{
   height: 200px;
 }
 form .send-btn{
+
   max-width: 110px;
   font-size: 1rem;
   font-weight: 500;
   text-transform: uppercase;
 }
 form .send-btn:hover{
-  background: var(--main-color);
+  color: var(--bg-color);
+  background: var(--text-color);
 }
 .copyright{
   padding: 20px;
   text-align: center;
-  color: #fff;
+  color: var(--bg-color);
   background: var(--text-color)
 }
 
@@ -383,7 +406,7 @@ form .send-btn:hover{
     right: 0;
     display: flex;
     flex-direction: column;
-    background: #fff;
+    background:var(--bg-color);
     box-shadow: 0 4px  4px rgba(0, 0, 0, 0.1);
     transition: 0.2s ease;
     text-align: left;
