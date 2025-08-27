@@ -24,3 +24,18 @@ const sr =  ScrollReveal({
 sr.reveal('.home-text', {delay:200, origin:'top'})
 sr.reveal('.home-img', {delay:400, origin:'top'})
 sr.reveal('.about-title, .about-text, .heading, .box, input, textarea ', {delay:200, origin:'top'})
+
+// submission of contact form using EmailJS
+
+document.getElementById("contact-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  emailjs.sendForm("service_wtmtd6u", "template_rjci8ca", this)
+    .then(() => {
+      alert("Message sent successfully!");
+      this.reset();
+    }, (error) => {
+      alert("Failed to send message. Please try again.");
+      console.log("EmailJS Error:", error.text);
+    });
+});

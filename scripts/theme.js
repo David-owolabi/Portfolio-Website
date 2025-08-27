@@ -1,6 +1,11 @@
+if(!localStorage.dark){
+  localStorage.dark ='false'
+}
+
 var icon = document.getElementById("js-dark-theme");
 
-icon.onclick = function(){
+
+toggle = function(){
   document.documentElement.classList.toggle("dark-theme");
   if(document.documentElement.classList.contains("dark-theme")){
     icon.classList.remove("bx-moon");
@@ -10,3 +15,18 @@ icon.onclick = function(){
     icon.classList.add("bx-moon");
   }
 }
+icon.onclick = function(){
+  toggle();
+  if (localStorage.dark == "true") {
+    localStorage.dark = "false"
+  } else {
+    localStorage.dark = "true"
+  }
+}
+
+if (localStorage.dark == 'true'){
+  toggle();
+}
+
+
+

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome</title>
+  <title>David's Portfolio</title>
   
   <!-- Box icons -->
    <link rel="shortcut icon" href="images/portfolio.png" type="image/x-icon">
@@ -200,11 +200,23 @@
   
   <div class="contact-form">
 
-    <form id="contact-form"  action="">
+    <form id="contact-form">
+      <!-- <input type="hidden" name="to_email" value="davidowolabi252@gmail.com">
       <input type="text" placeholder="Your name" required>
       <input type="email" name="" id="" placeholder="Enter Your Email" required>
       <textarea name="" id="" cols="30" rows="10" placeholder="Write Message Here..." reuired></textarea>
-      <input type="submit" value="Send" class="send-btn">
+      <input type="submit" value="Send" class="send-btn"> -->
+      <input type="hidden" name="time" value="Mar 10 2025 08:46">
+        <label>Name</label>
+        <input type="text" title="Enter your full name" name="name" required>
+        <label>Email</label>
+        <input type="email" title="Enter a valid email address" name="email" required>
+        <label>Subject</label>
+        <input type="text" title="Enter the subject of your message" name="title" required>
+        <label>Message</label>
+        <textarea name="message" title="Write your message here" required></textarea>
+        <input type="submit" value="Send" class="send-btn">
+
     </form>
   </div>
 </section>
@@ -214,9 +226,15 @@
  <p>&#169; David Owolabi All Rights Reserved.</p>
  </div>
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  (function(){
+      emailjs.init("VsdUQ93IrQwpunguV"); 
+  })();
+</script>
 
 <!-- Scroll Reveal -->
- <script src="https://unpkg.com/scrollreveal"></script>
+   <script src="https://unpkg.com/scrollreveal"></script>
    <!-- Custom Js File -->
   <script src="scripts/theme.js"></script>
   <script src="scripts/main.js"></script>
