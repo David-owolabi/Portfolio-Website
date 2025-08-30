@@ -6,8 +6,8 @@ var icon = document.getElementById("js-dark-theme");
 
 
 toggle = function(){
-  document.documentElement.classList.toggle("dark-theme");
-  if(document.documentElement.classList.contains("dark-theme")){
+  document.body.classList.toggle("dark-theme");
+  if(document.body.classList.contains("dark-theme")){
     icon.classList.remove("bx-moon");
     icon.classList.add("bx-sun");
   } else {
@@ -24,8 +24,18 @@ icon.onclick = function(){
   }
 }
 
+
+// On load, set theme and icon state
 if (localStorage.dark == 'true'){
-  toggle();
+  if (!document.body.classList.contains('dark-theme')) {
+    document.body.classList.add('dark-theme');
+  }
+  icon.classList.remove("bx-moon");
+  icon.classList.add("bx-sun");
+} else {
+  document.body.classList.remove('dark-theme');
+  icon.classList.remove("bx-sun");
+  icon.classList.add("bx-moon");
 }
 
 
